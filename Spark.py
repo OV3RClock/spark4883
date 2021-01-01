@@ -47,23 +47,87 @@ async def on_member_remove(member):
 @client.event
 async def on_raw_reaction_add(payload):
     message_id = payload.message_id
+    guild = discord.utils.find(lambda g: g.id == payload.guild_id, client.guilds)
+    member = discord.utils.find(lambda m: m.id == payload.user_id, guild.members)
     if message_id == messageid:
         if payload.emoji.name == "overwatch":
-            guild_id = payload.guild_id
-            guild = discord.utils.find(lambda g: g.id == guild_id, client.guilds)
             role = discord.utils.get(guild.roles, name="Overwatch")
-            member = discord.utils.find(lambda m: m.id == payload.user_id, guild.members)
+            await member.add_roles(role)
+        if payload.emoji.name == "hots":
+            role = discord.utils.get(guild.roles, name="Hots")
+            await member.add_roles(role)
+        if payload.emoji.name == "amongus":
+            role = discord.utils.get(guild.roles, name="Among Us")
+            await member.add_roles(role)
+        if payload.emoji.name == "apex":
+            role = discord.utils.get(guild.roles, name="Apex")
+            await member.add_roles(role)
+        if payload.emoji.name == "destiny2":
+            role = discord.utils.get(guild.roles, name="Destiny 2")
+            await member.add_roles(role)
+        if payload.emoji.name == "monsterhunter":
+            role = discord.utils.get(guild.roles, name="Monster Hunter")
+            await member.add_roles(role)
+        if payload.emoji.name == "aoe":
+            role = discord.utils.get(guild.roles, name="AoE")
+            await member.add_roles(role)
+        if payload.emoji.name == "minecraft":
+            role = discord.utils.get(guild.roles, name="Minecraft")
+            await member.add_roles(role)
+        if payload.emoji.name == "albion":
+            role = discord.utils.get(guild.roles, name="Albion")
+            await member.add_roles(role)
+        if payload.emoji.name == "hyperscape":
+            role = discord.utils.get(guild.roles, name="Hyperscape")
+            await member.add_roles(role)
+        if payload.emoji.name == "heartstone":
+            role = discord.utils.get(guild.roles, name="Heartstone")
+            await member.add_roles(role)
+        if payload.emoji.name == "skribbl":
+            role = discord.utils.get(guild.roles, name="Skribbl.io")
             await member.add_roles(role)
 
 @client.event
 async def on_raw_reaction_remove(payload):
     message_id = payload.message_id
+    guild = discord.utils.find(lambda g: g.id == payload.guild_id, client.guilds)
+    member = discord.utils.find(lambda m: m.id == payload.user_id, guild.members)
     if message_id == messageid:
         if payload.emoji.name == "overwatch":
-            guild_id = payload.guild_id
-            guild = discord.utils.find(lambda g: g.id == guild_id, client.guilds)
             role = discord.utils.get(guild.roles, name="Overwatch")
-            member = discord.utils.find(lambda m: m.id == payload.user_id, guild.members)
+            await member.remove_roles(role)
+        if payload.emoji.name == "hots":
+            role = discord.utils.get(guild.roles, name="Hots")
+            await member.remove_roles(role)
+        if payload.emoji.name == "amongus":
+            role = discord.utils.get(guild.roles, name="Among Us")
+            await member.remove_roles(role)
+        if payload.emoji.name == "apex":
+            role = discord.utils.get(guild.roles, name="Apex")
+            await member.remove_roles(role)
+        if payload.emoji.name == "destiny2":
+            role = discord.utils.get(guild.roles, name="Destiny 2")
+            await member.remove_roles(role)
+        if payload.emoji.name == "monsterhunter":
+            role = discord.utils.get(guild.roles, name="Monster Hunter")
+            await member.remove_roles(role)
+        if payload.emoji.name == "aoe":
+            role = discord.utils.get(guild.roles, name="AoE")
+            await member.remove_roles(role)
+        if payload.emoji.name == "minecraft":
+            role = discord.utils.get(guild.roles, name="Minecraft")
+            await member.remove_roles(role)
+        if payload.emoji.name == "albion":
+            role = discord.utils.get(guild.roles, name="Albion")
+            await member.remove_roles(role)
+        if payload.emoji.name == "hyperscape":
+            role = discord.utils.get(guild.roles, name="Hyperscape")
+            await member.remove_roles(role)
+        if payload.emoji.name == "heartstone":
+            role = discord.utils.get(guild.roles, name="Heartstone")
+            await member.remove_roles(role)
+        if payload.emoji.name == "skribbl":
+            role = discord.utils.get(guild.roles, name="Skribbl.io")
             await member.remove_roles(role)
 
 @client.event
