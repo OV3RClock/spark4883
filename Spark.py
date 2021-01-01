@@ -68,7 +68,9 @@ async def on_raw_reaction_remove(payload):
 
 @client.event
 async def on_message(message):
-    if message.content == "Hello":
+    if message.author.bot:
+        return
+    elif message.content == "Hello":
         await message.channel.send("Hi !")
     await client.process_commands(message)
 
