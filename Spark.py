@@ -34,8 +34,9 @@ async def on_ready():
 
 @client.event
 async def on_member_join(member):
-    role = discord.utils.get(member.guild.roles, name="─────────────────────")
-    await member.add_roles(role)
+    role1 = discord.utils.get(member.guild.roles, name="Invités")
+    role2 = discord.utils.get(member.guild.roles, name="─────────────────────")
+    await member.add_roles(role1, role2)
     channel = discord.utils.get(client.get_all_channels(), guild__name=member.guild.name, name="général")
     await channel.send("Bienvenue <@" + str(member.id) + "> ! :wave:")
 
