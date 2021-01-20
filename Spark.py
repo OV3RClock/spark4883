@@ -136,7 +136,7 @@ async def on_message(message):
     if message.author.bot:
         return
     elif message.content == "Hello":
-        await message.channel.send("Hi !")
+        await message.channel.send("Hello")
     await client.process_commands(message)
 
 
