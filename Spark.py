@@ -12,7 +12,7 @@ print("Spark#4883 " + version + " © OVERClock")
 
 #DATA
 token = os.environ["DISCORD_TOKEN"]
-messageid = 794583549960650792
+messageid = 812828213943337020
 selected_prefix = "!"
 intents = discord.Intents.default()
 intents.members = True
