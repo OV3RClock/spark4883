@@ -227,15 +227,15 @@ async def create_role_embed(ctx):
     apex = discord.utils.get(ctx.message.guild.emojis, name="apex")
     destiny2 = discord.utils.get(ctx.message.guild.emojis, name="destiny2")
     monsterhunter = discord.utils.get(ctx.message.guild.emojis, name="monsterhunter")
+    blackdesert = discord.utils.get(ctx.message.guild.emojis, name="blackdesert")
     aoe = discord.utils.get(ctx.message.guild.emojis, name="aoe")
     minecraft = discord.utils.get(ctx.message.guild.emojis, name="minecraft")
-    albion = discord.utils.get(ctx.message.guild.emojis, name="albion")
     hyperscape = discord.utils.get(ctx.message.guild.emojis, name="hyperscape")
     heartstone = discord.utils.get(ctx.message.guild.emojis, name="heartstone")
     skribbl = discord.utils.get(ctx.message.guild.emojis, name="skribbl")
     em = discord.Embed(title = ":page_with_curl: Roles", colour=0x000000)
     em.set_author(name = ctx.guild.name, icon_url=ctx.guild.icon_url)
-    em.add_field(name = "Voici les roles disponibles sur ce serveur :", value =
+    em.add_field(name = "Si vous possédez déjà un rôle, il est inutile de remettre une réaction !", value =
         f"""
         {overwatch} Overwatch
         {hots} Hots
@@ -243,9 +243,9 @@ async def create_role_embed(ctx):
         {apex} Apex Legends
         {destiny2} Destiny 2
         {monsterhunter} Monster Hunter
+        {blackdesert} Black Desert Online
         {aoe} Age of Empires
         {minecraft} Minecraft
-        {albion} Albion Online
         {hyperscape} Hyperscape
         {heartstone} Heartstone
         {skribbl} Skribbl.io
@@ -258,9 +258,9 @@ async def create_role_embed(ctx):
     await msg.add_reaction(apex)
     await msg.add_reaction(destiny2)
     await msg.add_reaction(monsterhunter)
+    await msg.add_reaction(blackdesert)
     await msg.add_reaction(aoe)
     await msg.add_reaction(minecraft)
-    await msg.add_reaction(albion)
     await msg.add_reaction(hyperscape)
     await msg.add_reaction(heartstone)
     await msg.add_reaction(skribbl)
