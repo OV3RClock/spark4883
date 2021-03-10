@@ -69,14 +69,14 @@ async def on_raw_reaction_add(payload):
         if payload.emoji.name == "monsterhunter":
             role = discord.utils.get(guild.roles, name="Monster Hunter")
             await member.add_roles(role)
+        if payload.emoji.name == "blackdesert":
+            role = discord.utils.get(guild.roles, name="Black Desert")
+            await member.add_roles(role)
         if payload.emoji.name == "aoe":
             role = discord.utils.get(guild.roles, name="AoE")
             await member.add_roles(role)
         if payload.emoji.name == "minecraft":
             role = discord.utils.get(guild.roles, name="Minecraft")
-            await member.add_roles(role)
-        if payload.emoji.name == "blackdesert":
-            role = discord.utils.get(guild.roles, name="Black Desert")
             await member.add_roles(role)
         if payload.emoji.name == "hyperscape":
             role = discord.utils.get(guild.roles, name="Hyperscape")
@@ -112,14 +112,14 @@ async def on_raw_reaction_remove(payload):
         if payload.emoji.name == "monsterhunter":
             role = discord.utils.get(guild.roles, name="Monster Hunter")
             await member.remove_roles(role)
+        if payload.emoji.name == "blackdesert":
+            role = discord.utils.get(guild.roles, name="Black Desert")
+            await member.remove_roles(role)
         if payload.emoji.name == "aoe":
             role = discord.utils.get(guild.roles, name="AoE")
             await member.remove_roles(role)
         if payload.emoji.name == "minecraft":
             role = discord.utils.get(guild.roles, name="Minecraft")
-            await member.remove_roles(role)
-        if payload.emoji.name == "blackdesert":
-            role = discord.utils.get(guild.roles, name="Black Desert")
             await member.remove_roles(role)
         if payload.emoji.name == "hyperscape":
             role = discord.utils.get(guild.roles, name="Hyperscape")
