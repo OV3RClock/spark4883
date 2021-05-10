@@ -223,7 +223,7 @@ async def create_role_embed(ctx):
     await ctx.channel.purge(limit=1)
     overwatch = discord.utils.get(ctx.message.guild.emojis, name="overwatch")
     hots = discord.utils.get(ctx.message.guild.emojis, name="hots")
-    lostcenturia = discord.utils.get(ctx.message.guild.emojis, name="amongus")
+    lostcenturia = discord.utils.get(ctx.message.guild.emojis, name="lostcenturia")
     apex = discord.utils.get(ctx.message.guild.emojis, name="apex")
     destiny2 = discord.utils.get(ctx.message.guild.emojis, name="destiny2")
     monsterhunter = discord.utils.get(ctx.message.guild.emojis, name="monsterhunter")
