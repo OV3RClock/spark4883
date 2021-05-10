@@ -57,8 +57,8 @@ async def on_raw_reaction_add(payload):
         if payload.emoji.name == "hots":
             role = discord.utils.get(guild.roles, name="Hots")
             await member.add_roles(role)
-        if payload.emoji.name == "amongus":
-            role = discord.utils.get(guild.roles, name="Among Us")
+        if payload.emoji.name == "lostcenturia":
+            role = discord.utils.get(guild.roles, name="Lost Centuria")
             await member.add_roles(role)
         if payload.emoji.name == "apex":
             role = discord.utils.get(guild.roles, name="Apex")
@@ -100,8 +100,8 @@ async def on_raw_reaction_remove(payload):
         if payload.emoji.name == "hots":
             role = discord.utils.get(guild.roles, name="Hots")
             await member.remove_roles(role)
-        if payload.emoji.name == "amongus":
-            role = discord.utils.get(guild.roles, name="Among Us")
+        if payload.emoji.name == "lostcenturia":
+            role = discord.utils.get(guild.roles, name="Lost Centuria")
             await member.remove_roles(role)
         if payload.emoji.name == "apex":
             role = discord.utils.get(guild.roles, name="Apex")
@@ -223,7 +223,7 @@ async def create_role_embed(ctx):
     await ctx.channel.purge(limit=1)
     overwatch = discord.utils.get(ctx.message.guild.emojis, name="overwatch")
     hots = discord.utils.get(ctx.message.guild.emojis, name="hots")
-    amongus = discord.utils.get(ctx.message.guild.emojis, name="amongus")
+    lostcenturia = discord.utils.get(ctx.message.guild.emojis, name="amongus")
     apex = discord.utils.get(ctx.message.guild.emojis, name="apex")
     destiny2 = discord.utils.get(ctx.message.guild.emojis, name="destiny2")
     monsterhunter = discord.utils.get(ctx.message.guild.emojis, name="monsterhunter")
@@ -239,7 +239,7 @@ async def create_role_embed(ctx):
         f"""
         {overwatch} Overwatch
         {hots} Hots
-        {amongus} Among Us
+        {lostcenturia} Lost Centuria
         {apex} Apex Legends
         {destiny2} Destiny 2
         {monsterhunter} Monster Hunter
@@ -254,7 +254,7 @@ async def create_role_embed(ctx):
     msg = await ctx.channel.send(embed=em)
     await msg.add_reaction(overwatch)
     await msg.add_reaction(hots)
-    await msg.add_reaction(amongus)
+    await msg.add_reaction(lostcenturia)
     await msg.add_reaction(apex)
     await msg.add_reaction(destiny2)
     await msg.add_reaction(monsterhunter)
