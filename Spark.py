@@ -12,7 +12,7 @@ print("Spark#4883 " + version + " © OVERClock")
 
 #DATA
 token = os.environ["DISCORD_TOKEN"]
-messageid = 841427939140304956
+messageid = 819197089778892810
 selected_prefix = "!"
 intents = discord.Intents.default()
 intents.members = True
@@ -57,8 +57,8 @@ async def on_raw_reaction_add(payload):
         if payload.emoji.name == "hots":
             role = discord.utils.get(guild.roles, name="Hots")
             await member.add_roles(role)
-        if payload.emoji.name == "lostcenturia":
-            role = discord.utils.get(guild.roles, name="Lost Centuria")
+        if payload.emoji.name == "newworld":
+            role = discord.utils.get(guild.roles, name="New World")
             await member.add_roles(role)
         if payload.emoji.name == "apex":
             role = discord.utils.get(guild.roles, name="Apex")
@@ -69,23 +69,14 @@ async def on_raw_reaction_add(payload):
         if payload.emoji.name == "monsterhunter":
             role = discord.utils.get(guild.roles, name="Monster Hunter")
             await member.add_roles(role)
-        if payload.emoji.name == "blackdesert":
-            role = discord.utils.get(guild.roles, name="Black Desert")
-            await member.add_roles(role)
         if payload.emoji.name == "aoe":
             role = discord.utils.get(guild.roles, name="AoE")
             await member.add_roles(role)
         if payload.emoji.name == "minecraft":
             role = discord.utils.get(guild.roles, name="Minecraft")
             await member.add_roles(role)
-        if payload.emoji.name == "hyperscape":
-            role = discord.utils.get(guild.roles, name="Hyperscape")
-            await member.add_roles(role)
-        if payload.emoji.name == "heartstone":
-            role = discord.utils.get(guild.roles, name="Heartstone")
-            await member.add_roles(role)
-        if payload.emoji.name == "skribbl":
-            role = discord.utils.get(guild.roles, name="Skribbl.io")
+        if payload.emoji.name == "jeuxdivers":
+            role = discord.utils.get(guild.roles, name="Jeux divers")
             await member.add_roles(role)
 
 @client.event
@@ -100,8 +91,8 @@ async def on_raw_reaction_remove(payload):
         if payload.emoji.name == "hots":
             role = discord.utils.get(guild.roles, name="Hots")
             await member.remove_roles(role)
-        if payload.emoji.name == "lostcenturia":
-            role = discord.utils.get(guild.roles, name="Lost Centuria")
+        if payload.emoji.name == "newworld":
+            role = discord.utils.get(guild.roles, name="New World")
             await member.remove_roles(role)
         if payload.emoji.name == "apex":
             role = discord.utils.get(guild.roles, name="Apex")
@@ -112,23 +103,14 @@ async def on_raw_reaction_remove(payload):
         if payload.emoji.name == "monsterhunter":
             role = discord.utils.get(guild.roles, name="Monster Hunter")
             await member.remove_roles(role)
-        if payload.emoji.name == "blackdesert":
-            role = discord.utils.get(guild.roles, name="Black Desert")
-            await member.remove_roles(role)
         if payload.emoji.name == "aoe":
             role = discord.utils.get(guild.roles, name="AoE")
             await member.remove_roles(role)
         if payload.emoji.name == "minecraft":
             role = discord.utils.get(guild.roles, name="Minecraft")
             await member.remove_roles(role)
-        if payload.emoji.name == "hyperscape":
-            role = discord.utils.get(guild.roles, name="Hyperscape")
-            await member.remove_roles(role)
-        if payload.emoji.name == "heartstone":
-            role = discord.utils.get(guild.roles, name="Heartstone")
-            await member.remove_roles(role)
-        if payload.emoji.name == "skribbl":
-            role = discord.utils.get(guild.roles, name="Skribbl.io")
+        if payload.emoji.name == "jeuxdivers":
+            role = discord.utils.get(guild.roles, name="Jeux divers")
             await member.remove_roles(role)
 
 @client.event
@@ -223,47 +205,38 @@ async def create_role_embed(ctx):
     await ctx.channel.purge(limit=1)
     overwatch = discord.utils.get(ctx.message.guild.emojis, name="overwatch")
     hots = discord.utils.get(ctx.message.guild.emojis, name="hots")
-    lostcenturia = discord.utils.get(ctx.message.guild.emojis, name="lostcenturia")
+    newworld = discord.utils.get(ctx.message.guild.emojis, name="newworld")
     apex = discord.utils.get(ctx.message.guild.emojis, name="apex")
     destiny2 = discord.utils.get(ctx.message.guild.emojis, name="destiny2")
     monsterhunter = discord.utils.get(ctx.message.guild.emojis, name="monsterhunter")
-    blackdesert = discord.utils.get(ctx.message.guild.emojis, name="blackdesert")
     aoe = discord.utils.get(ctx.message.guild.emojis, name="aoe")
     minecraft = discord.utils.get(ctx.message.guild.emojis, name="minecraft")
-    hyperscape = discord.utils.get(ctx.message.guild.emojis, name="hyperscape")
-    heartstone = discord.utils.get(ctx.message.guild.emojis, name="heartstone")
-    skribbl = discord.utils.get(ctx.message.guild.emojis, name="skribbl")
+    jeuxdivers = discord.utils.get(ctx.message.guild.emojis, name="jeuxdivers")
     em = discord.Embed(title = ":page_with_curl: Roles", colour=0x000000)
     em.set_author(name = ctx.guild.name, icon_url=ctx.guild.icon_url)
     em.add_field(name = "Si vous possédez déjà un rôle, il est inutile de remettre une réaction !", value =
         f"""
         {overwatch} Overwatch
         {hots} Hots
-        {lostcenturia} Lost Centuria
+        {New World} New World
         {apex} Apex Legends
         {destiny2} Destiny 2
         {monsterhunter} Monster Hunter
-        {blackdesert} Black Desert Online
         {aoe} Age of Empires
         {minecraft} Minecraft
-        {hyperscape} Hyperscape
-        {heartstone} Heartstone
-        {skribbl} Skribbl.io
+        {jeuxdivers} Jeux divers
         """, inline=True)
     em.set_footer(text = creator, icon_url = client.user.avatar_url)
     msg = await ctx.channel.send(embed=em)
     await msg.add_reaction(overwatch)
     await msg.add_reaction(hots)
-    await msg.add_reaction(lostcenturia)
+    await msg.add_reaction(newworld)
     await msg.add_reaction(apex)
     await msg.add_reaction(destiny2)
     await msg.add_reaction(monsterhunter)
-    await msg.add_reaction(blackdesert)
     await msg.add_reaction(aoe)
     await msg.add_reaction(minecraft)
-    await msg.add_reaction(hyperscape)
-    await msg.add_reaction(heartstone)
-    await msg.add_reaction(skribbl)
+    await msg.add_reaction(jeuxdivers)
 
 @client.command()
 async def restart(ctx):
