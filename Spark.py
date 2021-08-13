@@ -218,7 +218,7 @@ async def create_role_embed(ctx):
         f"""
         {overwatch} Overwatch
         {hots} Hots
-        {New World} New World
+        {newworld} New World
         {apex} Apex Legends
         {destiny2} Destiny 2
         {monsterhunter} Monster Hunter
